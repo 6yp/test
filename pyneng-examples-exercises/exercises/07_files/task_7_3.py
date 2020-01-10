@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # -*- coding: utf-8 -*-
 '''
 Задание 7.3
@@ -17,3 +19,11 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 '''
+
+with open('CAM_table.txt', 'r') as f:
+    for line in f:
+        #print(line.rstrip().split())
+        istr = line.split()
+        if len(istr) > 0 and istr[0].isdigit():
+            #f"{istr[0]}     {istr[1]}"
+            print('{:8} {:8} {:>8}'.format(istr[0],istr[1],istr[3]))
