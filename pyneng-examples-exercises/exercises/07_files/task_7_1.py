@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 '''
 Задание 7.1
@@ -14,3 +15,13 @@ Outbound Interface:    FastEthernet0/0
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 '''
+with open('ospf.txt', 'r') as f:
+    for line in f:
+        line = (line.rstrip().split())
+        print(f'''{'Protocol:':20}{'OSPF':<10}
+{'Prefix:':20}{line[1]:<10}
+{'AD/Metric:':20}{line[2].strip('[]')}
+{'Next-Hop:':20}{line[4].rstrip(',')}
+{'Last update:':20}{line[5].rstrip(',')}
+{'Outbound Interface:':20}{line[6]}
+''')
