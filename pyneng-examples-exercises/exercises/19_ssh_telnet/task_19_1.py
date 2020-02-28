@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 '''
 Задание 19.1
@@ -16,4 +17,11 @@
 
 '''
 
-command = 'sh ip int br'
+import yaml
+from pprint import pprint
+
+with open('devices.yaml') as f:
+    templates = yaml.safe_load(f)
+
+pprint(templates)
+#command = 'sh ip int br'
